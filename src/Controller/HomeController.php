@@ -8,16 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    public function index() : Response
+    {
+        return $this->render('home/index.html.twig', ['controller_name' => 'HomeController',
+    ]);
+    }
     /**
      * @Route("/", name="home")
      */
-    public function accueil()
+/*    public function accueil()
     {
         return $this->render('home/accueil.html', [
             'controller_name' => 'HomeController',
         ]);
     }
-    
+  */  
     /** 
      *@Route("/programme", name="index_programme") 
     */
@@ -28,6 +33,19 @@ class HomeController extends AbstractController
     return $this->render('home/programme.html.twig',
     ['controller_name'=> 'HomeController',
     ]);
+}
+ 
+       
+    /** 
+     *@Route("/actu", name="index_actu") 
+    */
+
+
+    public function actu(){
+
+        return $this->render('home/actu.html.twig',
+        ['controller_name'=> 'HomeController',
+        ]);    
 }
 
    
