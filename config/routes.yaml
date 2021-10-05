@@ -2,9 +2,21 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 index:
-    path: /
+    path: /index
     controller: App\Controller\HomeController::index
 
 accueil:
-    path: /
+    path: /accueil
     controller: App\Controller\HomeController::accueil
+
+apropos:
+    path: /apropos
+    controller: App\Controller\HomeController::apropos
+
+
+contacter:
+    path: /contacter
+    controller: App\Controller\HomeController::contacter
+
+
+

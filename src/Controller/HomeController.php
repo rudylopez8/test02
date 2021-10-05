@@ -16,13 +16,31 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-/*    public function accueil()
-    {
-        return $this->render('home/accueil.html', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-  */  
+
+  public function accueil(): Response
+  {
+      return $this->render('home/accueil.html.twig', [
+          'controller_name' => 'HomeController',
+      ]);
+  }
+
+
+  public function apropos(): Response
+  {
+      return $this->render('home/apropos.html.twig', [
+          'controller_name' => 'HomeController',
+      ]);
+  }
+
+
+  public function contacter(): Response
+  {
+      return $this->render('home/contacter.html.twig', [
+          'controller_name' => 'HomeController',
+      ]);
+  }
+
+
     /** 
      *@Route("/programme", name="index_programme") 
     */
