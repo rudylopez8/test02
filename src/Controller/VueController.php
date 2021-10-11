@@ -37,7 +37,7 @@ class VueController extends AbstractController
     // est l’equivalent de ´ <?php echo $tableau[’idColonne’]; 
 
     /**
-     * @Route("/tableau", name="view_tableaux")
+     * @Route("/tableaux", name="view_tableaux")
      */
     public function tables(): Response
     {
@@ -53,5 +53,45 @@ class VueController extends AbstractController
         'tableau' => $tab,
         ]);
     } 
+
+        /**
+     * @Route("/Affichage", name="view_affichage")
+     */
+    public function Affichage(): Response
+    {
+        // J'initialise mes variables   
+        $Nom="lopez";
+        $Prenom="rudy";
+
+        // J'appelle la vue affichage/TWIG
+        return $this->render('VueController/affichage.html.twig', [
+        
+        // J'affiche Mes variables
+        'Nom' => $Nom,
+        'Prenom' => $Prenom,
+
+        ]);
+    } 
+    /**
+     * @Route("/ListeEleve", name="view_ListeEleve")
+     */
+    public function ListeEleve(): Response
+    {
+        // J'initialise mes tableaux   
+        $tab = ["rudy", "valery"];
+        $tab2 = ["lopez", "newla"];
+
+        // J'appelle la vue LISTEELEVE/TWIG
+        return $this->render('VueController/ListeEleve.html.twig', [
+        
+        // J'affiche Mes tableaux
+    
+        'tableau1' => $tab,
+        'tableau2' => $tab2,
+
+        ]);
+
+    } 
+
 
 }
