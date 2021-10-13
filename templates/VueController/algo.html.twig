@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} 
+    Algo Controller
+{% endblock %}
+
+{% block body %}
+        <h1> page algo </h1>
+            {% set moyenne=11 %}
+            {% set resulta="" %}
+            {{ moyenne }}
+                {% if moyenne>=12 %}
+                    {% set resulta="aquis"%}
+                {% elseif moyenne >=10%}
+                    {% set resulta="en courr daquisition"%}
+                {% else %}            
+                    {% set resulta="non aquis"%}
+            {% endif %}
+            // resulta=
+            {{resulta}}
+
+
+
+
+{% endblock %}

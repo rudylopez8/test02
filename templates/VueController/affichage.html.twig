@@ -8,8 +8,17 @@
 {% block body %}
         <h1> page affichage </h1>
 
-                {{ Nom }}
-             {{ Prenom }}
+            {{ Nom }}
+            {{ Prenom }}
+
+// On change de nom de Stagiaire
+
+{% set Nom = "MOAZ" %}
+<br>
+
+{{ Nom }}
+
+
 
 
 {% endblock %}

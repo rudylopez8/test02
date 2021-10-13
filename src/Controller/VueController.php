@@ -92,6 +92,51 @@ class VueController extends AbstractController
         ]);
 
     } 
+        /**
+     * @Route("/Operation", name="view_operation")
+     */
+    public function Operation(): Response
+    {
+        // J'initialise mes variables   
+        $Y=2;
 
+        // J'appelle la vue affichage/TWIG
+        return $this->render('VueController/operation.html.twig', [
+        
+        // J'affiche Mes variables
+        'y' => $Y,
+
+        ]);
+    } 
+
+     /**
+     * @Route("/algo", name="view_algo")
+     */
+    public function algo(): Response
+    {
+        // J'appelle la vue algo/TWIG
+        return $this->render('VueController/algo.html.twig', [        
+        ]);
+    } 
+     /**
+     * @Route("/exo5", name="view_exo5")
+     */
+    public function exo5(): Response
+    {
+        // J'appelle la vue exo5/TWIG
+        return $this->render('VueController/exo5.html.twig', [        
+        ]);
+    } 
+
+
+     /**
+     * @Route("/boucle", name="view_boucle")
+     */
+    public function boucle(): Response
+    {
+        // J'appelle la vue boucle/TWIG
+        return $this->render('VueController/boucle.html.twig', [        
+        ]);
+    } 
 
 }

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} 
+    Operation Controller
+{% endblock %}
+
+{% block body %}
+        <h1> page operation </h1>
+
+            {{ y }}
+
+
+{% set x=8 %}
+{{x }}
+<br>
+//addition
+{% set addition=x+y %}
+{{ addition}}
+<br>
+//soustraction
+            {% set x, y = '125', '555' %}
+
+{% set soustraction=x-y %}
+{{ soustraction}}
+<br>
+//multiplication
+{% set multiplication=x*y %}
+{{ multiplication}}
+<br>
+//division
+{% set division=x/y %}
+{{ division}}
+<br>
+//factorisation y**x
+{% set factorisation=y**x %}
+{{ factorisation}}
+
+
+{% endblock %}
