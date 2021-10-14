@@ -42,15 +42,11 @@ class VueController extends AbstractController
     public function tables(): Response
     {
         // J'initialise mon tableau   
-        $tab = [10, 15, 18];
 
         // J'appelle la vue TABLEAUX/TWIG
         return $this->render('VueController/tableaux.html.twig', [
         
         // J'affiche Mon tableau
-    
-        'cours_name' => 'COMPOSANTE VUE',
-        'tableau' => $tab,
         ]);
     } 
 
@@ -119,12 +115,12 @@ class VueController extends AbstractController
         ]);
     } 
      /**
-     * @Route("/exo5", name="view_exo5")
+     * @Route("/filtre", name="view_filtre")
      */
-    public function exo5(): Response
+    public function filtre(): Response
     {
-        // J'appelle la vue exo5/TWIG
-        return $this->render('VueController/exo5.html.twig', [        
+        // J'appelle la vue filtre/TWIG
+        return $this->render('VueController/filtre.html.twig', [        
         ]);
     } 
 

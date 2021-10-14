@@ -7,19 +7,28 @@
 
 {% block body %}
         <h1> page algo </h1>
-            {% set moyenne=11 %}
-            {% set resulta="" %}
-            {{ moyenne }}
-                {% if moyenne>=12 %}
-                    {% set resulta="aquis"%}
-                {% elseif moyenne >=10%}
-                    {% set resulta="en courr daquisition"%}
-                {% else %}            
-                    {% set resulta="non aquis"%}
-            {% endif %}
-            // resulta=
-            {{resulta}}
+        {% set moy1, moy2, moy3 = '13', '11', '14' %}
+        {% set resulta1, resulta2, resulta3 = "", "", "" %}
 
+        {% for i in 1..3 %}  
+
+                {% if moy~i>=12 %}
+                    {% set resulta~i="aquis"%}
+                {% elseif moy~i >=10%}
+                    {% set resulta~i="en courr daquisition"%}
+                {% else %}            
+                    {% set resulta~i="non aquis"%}
+            {% endif %}
+    {% endfor %}
+
+            <tr>    <td>analyse</td> <td>algoritme</td> <td>programation</td>
+</tr>
+    <tr> 
+    <td>{{moy1}}</td> <td>{{moy2}}</td> <td>{{moy3}}</td>
+    </tr>
+    <tr>     <td>{{resulta1}}</td> <td>{{resulta2}}</td> <td>{{resulta3}}</td>
+    </tr> 
+     </table>
 
 
 

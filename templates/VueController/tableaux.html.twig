@@ -6,20 +6,28 @@
 {% endblock %}
 
 {% block body %}
-        <h1> {{ cours_name }}</h1>
+// tableau 
+{% set a=1%}
+{% set b=2%}
+{% set c=3%}
+{% set d=4%}
+{% set e=5%}
 
-        <ul>
-            
-            <li>
-                {{ tableau[0] }}
-            </li>
-            <li>
-             {{ tableau[1] }}
-            </li>
-            <li>
-             {{ tableau[2] }}
-            </li>
-        </ul>
+{% set add=a+b+c+d+e%}
+{% set sou=a-b-c-d-e%}
+{% set mul=a*b*c*d*e%}
+{% set div=a/b/c/d/e%}
+{% set pui=a**b**c**d**e%}
 
 
+
+    <table>
+    <tr>    <td>addition</td> <td>soustraction</td> <td>multiplication</td> <td>division</td> <td>puissanse</td>
+</tr>
+    <tr> 
+    <td>{{a}}</td> <td>{{b}}</td> <td>{{c}}</td> <td>{{d}}</td> <td>{{e}}</td>
+    </tr>
+    <tr>     <td>{{add}}</td> <td>{{sou}}</td> <td>{{mul}}</td> <td>{{div}}</td> <td>{{pui}}</td>
+    </tr> 
+     </table>
 {% endblock %}

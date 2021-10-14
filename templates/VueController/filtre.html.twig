@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} 
+    Filtre Controller
+{% endblock %}
+
+{% block body %}
+        <h1> page filtre </h1>
+{% set tf1="salut"%}
+{{tf1|upper}}
+<h2> VIEW SYMFONY </h2>
+<hr>
+
+<ul> 
+<h1> // I - LES FILTRES DANS LA VUE </h1>
+
+        <li>
+            <h2>|last</h2> <br>
+            {{ [1, 2, 3, 4]|last }}
+
+        </li>
+
+        <li>
+            <h2>|date </h2> <br>
+            {{ "now"|date("m/d/Y") }}
+        </li>
+            
+
+
+
+{% endblock %}
