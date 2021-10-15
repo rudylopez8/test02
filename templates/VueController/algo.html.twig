@@ -12,12 +12,12 @@
 
         {% for i in 1..3 %}  
 
-                {% if moy~i>=12 %}
-                    {% set resulta~i="aquis"%}
-                {% elseif moy~i >=10%}
-                    {% set resulta~i="en courr daquisition"%}
-                {% else %}            
-                    {% set resulta~i="non aquis"%}
+            {% if moy~i>=12 %}
+                {% set resulta~i="aquis"%}
+            {% elseif moy~i >=10%}
+                {% set resulta~i="en courr daquisition"%}
+            {% else %}            
+                {% set resulta~i="non aquis"%}
             {% endif %}
     {% endfor %}
 
