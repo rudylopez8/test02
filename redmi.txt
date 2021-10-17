@@ -1,0 +1,36 @@
+template=VueController/algo
+route=vue/algo
+code
+// j'inicialise les moyennes
+        {% set moy1, moy2, moy3 = '13', '11', '14' %}
+// j'inicialise les résultas des string qui diront aqui ou en cour d'aquisition ou non aqui mais qui avant d'être remplis sont vides.
+        {% set resulta1, resulta2, resulta3 = "", "", "" %}
+// je lance une boucle qui vas de 1 a 3 pour ne pas faire 3 succétion de if elseif else.
+        {% for i in 1..3 %}  
+// je fait un test avec la variable moy concatenée au i de la boucle qui passera donc de 1 a 3 moy1 moy et moy3 définis plus haut.
+            {% if moy~i>=12 %}
+// si la condition et ok je remplis la variable resulta concatenée a i celon la répétition de la boucle resulta1 resulda2 ou resulta3 deffinis plus haut.
+                {% set resulta~i="aquis"%}
+            {% elseif moy~i >=10%}
+                {% set resulta~i="en courr daquisition"%}
+            {% else %}            
+                {% set resulta~i="non aquis"%}
+            {% endif %}
+    {% endfor %}
+// mes 3 variable resulta 1 2 et 3 sont remplis
+// je fait e tableau d'affichage
+     <table>
+// j'affiche les noms des competances
+            <tr>    <td>analyse</td> <td>algoritme</td> <td>programation</td>
+</tr>
+// j'affiche les moyenne sous les compétences
+    <tr> 
+    <td>{{moy1}}</td> <td>{{moy2}}</td> <td>{{moy3}}</td>
+    </tr>
+// j'affiche les résultas si les compétences sont aquise en cour d'aquisition ou non aquise
+    <tr>     <td>{{resulta1}}</td> <td>{{resulta2}}</td> <td>{{resulta3}}</td>
+    </tr> 
+     </table>
+
+
+
