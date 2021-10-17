@@ -31,6 +31,15 @@ code
     <tr>     <td>{{resulta1}}</td> <td>{{resulta2}}</td> <td>{{resulta3}}</td>
     </tr> 
      </table>
-
+// erreure afficher 
+ Symfony Exception
+ Symfony Docs 
+SyntaxError
+HTTP 500 Internal Server Error
+Unexpected token "operator" of value "~" ("end of statement block" expected).
+Exception Logs 1Stack Trace 
+Twig\Error\ 
+SyntaxError 
+in C:\wamp64\www\symfony\test02\templates\VueController\algo.html.twig (line 16) 
 
 
