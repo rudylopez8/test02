@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} VIEW SYMFONY {% endblock %}
+
+{% block body %}
+
+<h2> VIEW SYMFONY </h2>
+<hr>
+
+<ul> 
+    <h3> 
+        <li>  <a href="{{ path('Accueil') }}"> Accueil </a> </li>
+        <li>  <a href="{{ path('Systeme') }}"> Page Config du Systeme </a> </li>    
+        <li>  <a href="{{ path('Utilisateurs') }}"> Gestion des utilisateurs </a> </li>  
+        <li>  <a href="{{ path('Contenu') }}"> Contenu </a> </li>
+        <li>  <a href="{{ path('Categorie') }}"> Gestion des Categorie </a> </li>
+        <li>  <a href="{{ path('ArticlealaUNE') }}"> Article à la UNE </a> </li>
+        <li>  <a href="{{ path('Images') }}"> Gestion des Images </a> </li>
+        <li>  <a href="{{ path('Extensions') }}"> activation & désactivation de Modules/Plugin </a> </li>
+        <li>  <a href="{{ path('Logout') }}"> Sortire de l'admin  </a> </li>
+
+    </h3>
+
+</ul>
+
+
+
+{% endblock %}

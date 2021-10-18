@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} VIEW SYMFONY {% endblock %}
+
+{% block body %}
+
+<h2> VIEW SYMFONY </h2>
+<hr>
+
+<ul> 
+    <h3>
+        <li>  <a href="{{ path('Accueil') }}"> Accueil </a> </li>
+        <li>  <a href="{{ path('Apropos') }}"> A propos </a> </li>    
+        <li>  <a href="{{ path('LesLivres') }}"> Les Livres </a> </li>  
+        <li>  <a href="{{ path('Leslocations') }}"> Les locations </a> </li>    
+        <li>  <a href="{{ path('Documentations') }}"> Documentations </a> </li>    
+        <li>  <a href="{{ path('NousContacter') }}"> Nous Contacter </a> </li>    
+        <li>  <a href="{{ path('Connexion') }}"> Connexion </a> </li>    
+        <li>  <a href="{{ path('Administration') }}"> Administration </a> </li>    
+    </h3>
+
+</ul>
+
+
+
+{% endblock %}
