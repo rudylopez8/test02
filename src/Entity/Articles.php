@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\ArticlesRepository;
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * @ORM\Entity(repositoryClass=ArticlesRepository::class)
  */
@@ -31,6 +30,16 @@ class Articles
      * @ORM\Column(type="date")
      */
     private $date;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $resume;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
 
     public function getId(): ?int
     {
@@ -69,6 +78,30 @@ class Articles
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
