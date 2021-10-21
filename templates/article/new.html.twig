@@ -7,6 +7,11 @@
 
 {% block body %}
         <h1> page article </h1>
-
+     {{ articles.id }}
+     {{ articles.Titre }}
+     {{ articles.Resume }}          
+     {{ articles.Date| date("d/m/Y")  }}
+     {{ articles.Contenu }}          
+           
 
 {% endblock %}

@@ -10,7 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Contenu</th>
+                <th>resume</th>
                 <th>Date</th>
 
             </tr>
@@ -21,9 +21,9 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.Titre }}</td>
-                <td>{{ article.Contenu }}</td>
+                <td>{{ article.Resume }}</td>
+               
                 <td>{{ article.Date| date("d/m/Y")  }}</td>
-
             </tr>
         {% else %}
             <tr>

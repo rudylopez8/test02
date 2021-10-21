@@ -23,11 +23,14 @@ class ArticlesFixtures extends Fixture
             
             $articles->setTitre($faker->sentence())
                     ->setContenu($faker->sentence($nbWords = 20, $variableNbWords = true))    
-                ->setDate(new \DateTime());
+                    ->setResume($faker->sentence($nbWords = 20, $variableNbWords = true))    
+                    ->setImage($faker->sentence($nbWords = 20, $variableNbWords = true))    
+                    ->setDate(new \DateTime());
             $manager->persist($articles);
         }
+
      $manager->flush();
     }
-    
+
 
 }
