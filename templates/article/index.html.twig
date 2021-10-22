@@ -23,8 +23,9 @@
                 <td>{{ article.id }}</td>
                 <td>{{ article.Titre }}</td>
                 <td>{{ article.Resume }}</td>
-               
                 <td>{{ article.Date| date("d/m/Y")  }}</td>
+                <td> <a href="{{ path('affichage', {'id':article.id}) }}"> Afficher </a> </td>
+
             </tr>
         {% else %}
             <tr>
