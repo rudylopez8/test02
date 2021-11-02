@@ -25,7 +25,7 @@ class Utilisateurs
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Prénoms;
+    private $Prenoms;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -70,7 +70,7 @@ class Utilisateurs
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Propriétaires;
+    private $Proprietaires;
 
     /**
      * @ORM\Column(type="boolean")
@@ -99,12 +99,12 @@ class Utilisateurs
         return $this;
     }
 
-    public function getPrénoms(): ?string
+    public function getPrenoms(): ?string
     {
         return $this->Prénoms;
     }
 
-    public function setPrénoms(string $Prénoms): self
+    public function setPrenoms(string $Prénoms): self
     {
         $this->Prénoms = $Prénoms;
 
