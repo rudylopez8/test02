@@ -25,7 +25,7 @@ class Categorie
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Resumé;
+    private $Resume;
 
     public function getId(): ?int
     {
@@ -44,14 +44,14 @@ class Categorie
         return $this;
     }
 
-    public function getResumé(): ?string
+    public function getResume(): ?string
     {
-        return $this->Resumé;
+        return $this->Resume;
     }
 
-    public function setResumé(string $Resumé): self
+    public function setResume(string $Resume): self
     {
-        $this->Resumé = $Resumé;
+        $this->Resumé = $Resume;
 
         return $this;
     }
