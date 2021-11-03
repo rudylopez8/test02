@@ -20,225 +20,157 @@ class Utilisateurs
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Noms;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Prenoms;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Photo;
+    private $photo;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $DateNaissance;
+    private $datedenaissance;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Login;
-
-    /**
-     * @ORM\Column(type="string", length=511)
-     */
-    private $Password;
+    private $login;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Adresse;
+    private $pass;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Email;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Rôle;
+    private $email;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="string", length=255)
      */
-    private $Locataires;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $Proprietaires;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $Gestionnaires;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $Administrateurs;
+    private $role;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNoms(): ?string
+    public function getNom(): ?string
     {
-        return $this->Noms;
+        return $this->nom;
     }
 
-    public function setNoms(string $Noms): self
+    public function setNom(string $nom): self
     {
-        $this->Noms = $Noms;
+        $this->nom = $nom;
 
         return $this;
     }
 
-    public function getPrenoms(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->Prénoms;
+        return $this->prenom;
     }
 
-    public function setPrenoms(string $Prénoms): self
+    public function setPrenom(string $prenom): self
     {
-        $this->Prénoms = $Prénoms;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     public function getPhoto(): ?string
     {
-        return $this->Photo;
+        return $this->photo;
     }
 
-    public function setPhoto(string $Photo): self
+    public function setPhoto(string $photo): self
     {
-        $this->Photo = $Photo;
+        $this->photo = $photo;
 
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTimeInterface
+    public function getDatedenaissance(): ?\DateTimeInterface
     {
-        return $this->DateNaissance;
+        return $this->datedenaissance;
     }
 
-    public function setDateNaissance(\DateTimeInterface $DateNaissance): self
+    public function setDatedenaissance(\DateTimeInterface $datedenaissance): self
     {
-        $this->DateNaissance = $DateNaissance;
+        $this->datedenaissance = $datedenaissance;
 
         return $this;
     }
 
     public function getLogin(): ?string
     {
-        return $this->Login;
+        return $this->login;
     }
 
-    public function setLogin(string $Login): self
+    public function setLogin(string $login): self
     {
-        $this->Login = $Login;
+        $this->login = $login;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getPass(): ?string
     {
-        return $this->Password;
+        return $this->pass;
     }
 
-    public function setPassword(string $Password): self
+    public function setPass(string $pass): self
     {
-        $this->Password = $Password;
+        $this->pass = $pass;
 
         return $this;
     }
 
     public function getAdresse(): ?string
     {
-        return $this->Adresse;
+        return $this->adresse;
     }
 
-    public function setAdresse(string $Adresse): self
+    public function setAdresse(string $adresse): self
     {
-        $this->Adresse = $Adresse;
+        $this->adresse = $adresse;
 
         return $this;
     }
 
     public function getEmail(): ?string
     {
-        return $this->Email;
+        return $this->email;
     }
 
-    public function setEmail(string $Email): self
+    public function setEmail(string $email): self
     {
-        $this->Email = $Email;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getRôle(): ?string
+    public function getRole(): ?string
     {
-        return $this->Rôle;
+        return $this->role;
     }
 
-    public function setRôle(string $Rôle): self
+    public function setRole(string $role): self
     {
-        $this->Rôle = $Rôle;
-
-        return $this;
-    }
-
-    public function getLocataires(): ?bool
-    {
-        return $this->Locataires;
-    }
-
-    public function setLocataires(bool $Locataires): self
-    {
-        $this->Locataires = $Locataires;
-
-        return $this;
-    }
-
-    public function getPropriétaires(): ?bool
-    {
-        return $this->Propriétaires;
-    }
-
-    public function setPropriétaires(bool $Propriétaires): self
-    {
-        $this->Propriétaires = $Propriétaires;
-
-        return $this;
-    }
-
-    public function getGestionnaires(): ?bool
-    {
-        return $this->Gestionnaires;
-    }
-
-    public function setGestionnaires(bool $Gestionnaires): self
-    {
-        $this->Gestionnaires = $Gestionnaires;
-
-        return $this;
-    }
-
-    public function getAdministrateurs(): ?bool
-    {
-        return $this->Administrateurs;
-    }
-
-    public function setAdministrateurs(bool $Administrateurs): self
-    {
-        $this->Administrateurs = $Administrateurs;
+        $this->role = $role;
 
         return $this;
     }

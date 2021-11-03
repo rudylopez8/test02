@@ -4,6 +4,9 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use App\Entity\Utilisateurs;
+use App\Repository\UtilisateursRepository;
+
 use Faker;
 
 class UtilisateursFixtures extends Fixture
@@ -15,24 +18,20 @@ class UtilisateursFixtures extends Fixture
     for ($i=0; $i<8 ; $i++ ) 
     { 
         $utilisateurs = new Utilisateurs();
-        $utilisateurs->setNoms(" nom $i");
-        $utilisateurs->setPrenoms(" Prenom $i");
-        $utilisateurs->setPhoto(" photo $i");
-        $utilisateurs->setDateNaissance(new  \DateTime());
-        $utilisateurs->setLogin(" login $i");
-        $utilisateurs->setPassword(" password $i");
-        $utilisateurs->setAdresse(" $i rue de gery");
-        $utilisateurs->setEmail(" nom@ $i");
-        $utilisateurs->setRôle(" user");
-        $utilisateurs->setLocataires(true);
-        $utilisateurs->setProprietaires(false);
-        $utilisateurs->setGestionaires(false);
-        $utilisateurs->setAdministrateurs(false);
+        $rol=["proprietaire", "gestionaire", "locataire", "admin"];
+shuffle($rol);
+        $utilisateurs->setNom(" nom $i")
+        ->setPrenom(" prenom $i")
+        ->setPhoto(" photo $i")
+        ->setDatedenaissance(new  \DateTime())
+        ->setLogin(" login $i")
+        ->setPass(" password $i")
+        ->setAdresse(" $i rue de gery")
+        ->setEmail(" mail $i")
+        ->setRole($rol[0]);
 
 
-        $utilisateurs->setLogin(" login $i");
-        
-        $manager->persist($categorie);
+        $manager->persist($utilisateurs);
     }
 
  $manager->flush();

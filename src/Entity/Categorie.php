@@ -51,7 +51,7 @@ class Categorie
 
     public function setResume(string $Resume): self
     {
-        $this->Resumé = $Resume;
+        $this->Resume = $Resume;
 
         return $this;
     }
