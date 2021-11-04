@@ -35,7 +35,7 @@ class Utilisateurs
     /**
      * @ORM\Column(type="date")
      */
-    private $datedenaissance;
+    private $Datedenaissance;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -61,6 +61,7 @@ class Utilisateurs
      * @ORM\Column(type="string", length=255)
      */
     private $role;
+
 
     public function getId(): ?int
     {

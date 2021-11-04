@@ -35,7 +35,7 @@ class ArticleController extends AbstractController
         ]);
     }
     /**
-     * @Route("/new", name="articles_nouveau", methods={"GET", "POST"})
+     * @Route("/new", name="articles_nouveau", methods={"GET", "POST"})<
      */
     public function nouveau(Request $request, EntityManagerInterface $em): Response
     {

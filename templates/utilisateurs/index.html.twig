@@ -9,22 +9,21 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Noms</th>
-                <th>Prénoms</th>
+                <th>nom</th>
+                <th>prenom</th>
                 <th>Photo</th>
                 <th>Action</th>
 
             </tr>
         </thead>
         <tbody>
-        {% for utilisateurs in Utilisateurs %}
+        {% for utilisateur in utilisateurs %}
         {# https://twig.symfony.com/doc/3.x/tags/for.html #}
             <tr>
-                <td>{{ Utilisateurs.id }}</td>
-                <td>{{ Utilisateurs.Noms }}</td>
-                <td>{{ Utilisateurs.Prénoms }}</td>
-                <td>{{ Utilisateurs.Photo }}</td>
-                <td> <a href="{{ path('affichage', {'id':Utilisateurs.id}) }}"> Afficher </a> </td>
+                <td>{{ utilisateur.id }}</td>
+                <td>{{ utilisateur.nom }}</td>
+                <td>{{ utilisateur.prenom }}</td>
+                <td>{{ utilisateur.photo")  }}</td>
 
             </tr>
         {% else %}

@@ -27,9 +27,33 @@ class UtilisateursController extends AbstractController
         $utilisateurs = $repo->findAll();
     
         return $this->render('utilisateurs/index.html.twig', [
-            'Utilisateurs' => $utilisateurs,
+            'controller_name' => 'UtilisateurController',
+            'utilisateurs' => $utilisateurs,
 
         ]);
+    }
+    /**
+     * @Route("/newUtilisateurs", name="utilisateurs_nouveau", methods={"GET", "POST"})
+     */
+    public function nouveauUtilisateurs(Request $request, EntityManagerInterface $em): Response
+    {
+
+       $utilisateurs = new Utilisateurs();
+
+       $utilisateurs->setNom(" nom");
+       $utilisateurs->setPrenom(" prenom");
+
+       $utilisateurs->setPhoto(" photo");
+       $utilisateurs->setLogin(" login");
+       $utilisateurs->setPass("pass");
+
+       $em->persist($utilisateurs);
+       $em->flush();
+
+       return $this->render('utilisateurs/new.html.twig', [
+           'utilisateurs' => $utilisateurs,
+       ]);
+
     }
 
 }

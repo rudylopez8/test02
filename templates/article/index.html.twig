@@ -26,6 +26,8 @@
                 <td>{{ article.Date| date("d/m/Y")  }}</td>
                 <td> <a href="{{ path('affichage', {'id':article.id}) }}"> Afficher </a> </td>
 
+                <td> <a href="{{ path('articles_nouveau', {'id':article.id}) }}"> Nouveaux </a> </td>
+
             </tr>
         {% else %}
             <tr>

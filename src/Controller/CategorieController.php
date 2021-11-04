@@ -34,22 +34,19 @@ class CategorieController extends AbstractController
         ]);
     }
     /**
-     * @Route("/new", name="categorie_nouveau", methods={"GET", "POST"})
+     * @Route("/newcategorie", name="categorie_nouveau", methods={"GET", "POST"})
      */
     public function nouveau(Request $request, EntityManagerInterface $em): Response
     {
 
        $categorie = new Categorie();
 
-       // Ici je fais un enregistrement Manuel, on verra la suite avec le  Formulaire
        $categorie->setTitre(" Titre de ma Categorie");
        $categorie->setResume(" resume de ma Categorie");
 
-       // Je persiste Mon Enregistrement
        $em->persist($categorie);
        $em->flush();
 
-       // J'envoie au niveau du temple pour l'enregistrement
        return $this->render('categorie/new.html.twig', [
            'categorie' => $categorie,
        ]);

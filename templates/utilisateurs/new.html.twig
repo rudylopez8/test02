@@ -2,16 +2,16 @@
 
 
 {% block title %} 
-    Article Controller
+    Utilisateurs Controller
 {% endblock %}
 
 {% block body %}
-        <h1> page new </h1>
-     {{ articles.id }}
-     {{ articles.Titre }}
-     {{ articles.Resume }}          
-     {{ articles.Date| date("d/m/Y")  }}
-     {{ articles.Contenu }}          
+        <h1> page new utilisateur </h1>
+     {{ utilisateurs.id }}
+     {{ utilisateurs.Nom }}
+     {{ utilisateurs.Resume }}          
+     {{ utilisateurs.Datedenaissance| date("d/m/Y")  }}
+     {{ articles.Photo }}          
            
 
 {% endblock %}
