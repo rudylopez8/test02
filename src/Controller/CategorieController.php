@@ -20,7 +20,45 @@ use Symfony\Component\HttpFoundation\Request;
 class CategorieController extends AbstractController
 {
     /**
-     * @Route("/", name="categorie")
+     * @Route("/", name="ccategorie.nouvelcategorie")
+    */
+        // Ici on Fait une Enregistrement avec une Formulaire
+        public function pageForm(Request $request, EntityManagerInterface $manager)
+    {
+        $categorie =new Categorie(); // Instanciation
+
+        // Creation de mon Formulaire
+        $form = $this->createFormBuilder($categorie) 
+                    ->add('titre')
+                    ->add('resume')
+
+            // Demande le résultat
+            ->getForm();
+
+        // Analyse des Requetes & Traitement des information 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($categorie); 
+            $manager->flush();
+
+            return $this->redirectToRoute('ccategorie.nouvelcategorie', 
+
+            ['id'=>$categorie->getId()]); // Redirection vers la page
+        }
+       
+        // Redirection du Formulaire vers le TWIG pour l’affichage avec
+        return $this->render('categorie/new2.html.twig', [
+            'formCategorie' => $form->createView()
+        ]);
+    }
+    
+
+
+
+
+    /**
+     * @Route("/categorieindex", name="categorie")
      */
     public function index(): Response
     {

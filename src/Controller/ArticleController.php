@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Form\ArticlesType;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
+     /**
      * @Route("/articles")
      */
     
@@ -20,7 +20,69 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="articles_index")
+     * @Route("/", name="aarticle.nouvelarticle")
+    */
+        // Ici on Fait une Enregistrement avec une Formulaire
+        public function pageForm(Request $request, EntityManagerInterface $manager)
+    {
+        $articles =new Articles(); // Instanciation
+
+        // Creation de mon Formulaire
+        $form = $this->createFormBuilder($articles) 
+                    ->add('titre')
+                    ->add('resume')
+                    ->add('contenu')
+                    ->add('date')
+                    ->add('image')
+
+            // Demande le résultat
+            ->getForm();
+
+        // Analyse des Requetes & Traitement des information 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($articles); 
+            $manager->flush();
+
+            return $this->redirectToRoute('aarticle.nouvelarticle', 
+
+            ['id'=>$articles->getId()]); // Redirection vers la page
+        }
+       
+        // Redirection du Formulaire vers le TWIG pour l’affichage avec
+        return $this->render('article/new2.html.twig', [
+            'formArticle' => $form->createView()
+        ]);
+    }
+    /**
+     * @Route("/new3", name="new3")
+     */
+    public function new3(Request $request): Response
+    {
+        $articles = new Articles();
+        $form = $this->createForm(ArticlesType::class, $articles);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($articles);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('new3', []);
+        }
+
+        return $this->render('article/new3.html.twig', [
+            'articles' => $articles,
+            'form' => $form->createView(),
+        ]);
+    }
+
+
+    
+
+    /**
+     * @Route("/articleindex", name="articleindex")
      */
 
     public function index(): Response
@@ -34,6 +96,7 @@ class ArticleController extends AbstractController
 
         ]);
     }
+
     /**
      * @Route("/new", name="articles_nouveau", methods={"GET", "POST"})<
      */
