@@ -5,6 +5,8 @@
 
 {% block title %}Index Categorie{% endblock %}
     <h1>Categorie index</h1>
+{% include 'AdminMenu.html.twig' %}
+
 <table class="table">
         <thead>
             <tr>
@@ -23,6 +25,8 @@
                 <td>{{ categories.Titre }}</td>
                 <td>{{ categories.Resume }}</td>
                 <td> <a href="{{ path('categorie_nouveau', {'id':categories.id}) }}"> Nouveaux </a> </td>
+                <td> <a href="{{ path('nouvelcategorie', {'id':categories.id}) }}"> form Nouveelle categorie </a> </td>
+                <td> <a href="{{ path('affichageCategorie', {'id':categories.id}) }}"> Afficher </a> </td>
 
             </tr>
         {% else %}

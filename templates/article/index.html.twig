@@ -4,6 +4,8 @@
 {% block body %}
 
 {% block title %}Index Articles{% endblock %}
+{% include 'UserMenu.html.twig' %}
+
     <h1>Articles index</h1>
 <table class="table">
         <thead>
@@ -27,6 +29,8 @@
                 <td> <a href="{{ path('affichage', {'id':article.id}) }}"> Afficher </a> </td>
 
                 <td> <a href="{{ path('articles_nouveau', {'id':article.id}) }}"> Nouveaux </a> </td>
+                <td> <a href="{{ path('aarticle.nouvelarticle', {'id':article.id}) }}"> Nouveaux avec form </a> </td>
+                <td> <a href="{{ path('new3article', {'id':article.id}) }}"> Nouveaux avec form2 </a> </td>
 
             </tr>
         {% else %}

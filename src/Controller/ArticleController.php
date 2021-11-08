@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="aarticle.nouvelarticle")
+     * @Route("/new2article", name="aarticle.nouvelarticle")
     */
         // Ici on Fait une Enregistrement avec une Formulaire
         public function pageForm(Request $request, EntityManagerInterface $manager)
@@ -56,7 +56,7 @@ class ArticleController extends AbstractController
         ]);
     }
     /**
-     * @Route("/new3", name="new3")
+     * @Route("/new3article", name="new3article")
      */
     public function new3(Request $request): Response
     {
@@ -69,7 +69,7 @@ class ArticleController extends AbstractController
             $entityManager->persist($articles);
             $entityManager->flush();
 
-            return $this->redirectToRoute('new3', []);
+            return $this->redirectToRoute('new3article', []);
         }
 
         return $this->render('article/new3.html.twig', [

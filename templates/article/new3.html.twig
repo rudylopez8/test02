@@ -1,17 +1,20 @@
 {% extends 'base.html.twig' %}
 
-
-{% block title %} 
-    Article Controller
-{% endblock %}
-
 {% block body %}
-        <h1> page new </h1>
-     {{ articles.id }}
-     {{ articles.Titre }}
-     {{ articles.Resume }}          
-     {{ articles.Date| date("d/m/Y")  }}
-     {{ articles.Contenu }}          
-           
+
+    {{ form_start(form) }}
+
+{{ form_start(form) }}
+Titre : {{ form_widget(form.titre) }}<br>
+Resumé: {{ form_widget(form.resume) }} <br>
+Contenu: {{ form_widget(form.contenu) }} <br>
+Image: {{ form_widget(form.image) }} <br>
+Date Creation : {{ form_widget(form.date) }} <br>
+  <button type="submit" class="btn btn-success">envoyer</button>
+
+      
+    {{ form_end(form) }}
+
 
 {% endblock %}
+

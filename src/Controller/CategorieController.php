@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CategorieController extends AbstractController
 {
     /**
-     * @Route("/", name="ccategorie.nouvelcategorie")
+     * @Route("/nouvelcategorie", name="nouvelcategorie")
     */
         // Ici on Fait une Enregistrement avec une Formulaire
         public function pageForm(Request $request, EntityManagerInterface $manager)
@@ -42,7 +42,7 @@ class CategorieController extends AbstractController
             $manager->persist($categorie); 
             $manager->flush();
 
-            return $this->redirectToRoute('ccategorie.nouvelcategorie', 
+            return $this->redirectToRoute('nouvelcategorie', 
 
             ['id'=>$categorie->getId()]); // Redirection vers la page
         }
