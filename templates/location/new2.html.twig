@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(formLocation) }}
+
+{{ form_start(formLocation) }}
+date : {{ form_widget(formLocation.date) }}<br>
+Titre: {{ form_widget(formLocation.titre) }} <br>
+Categorie: {{ form_widget(formLocation.categorie) }} <br>
+Image: {{ form_widget(formLocation.image) }} <br>
+Description: {{ form_widget(formLocation.description) }} <br>
+Valeur: {{ form_widget(formLocation.valeur) }}<br>
+adresse: {{ form_widget(formLocation.adresse) }}<br>
+Accessibility: {{ form_widget(formLocation.accessibility) }}<br>
+Statuts: {{ form_widget(formLocation.statuts) }}<br>
+A la Une : {{ form_widget(formLocation.alaune) }}<br>
+
+  <button type="submit" class="btn btn-success">envoyer</button>
+
+      
+    {{ form_end(formLocation) }}
+
+
+{% endblock %}
+

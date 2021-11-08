@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} 
+    Location Controller
+{% endblock %}
+
+{% block body %}
+        <h1> page show </h1>
+     {{ Location.id }}
+     {{ Location.date| date("d/m/Y")  }}
+     {{ Location.titre }}
+     {{ Location.categorie }}          
+     {{ Location.image }}
+     {{ Location.description }}
+     {{ Location.valeur }}
+     {{ Location.adresse }}
+     {{ Location.accessibility }}
+     {{ Location.statuts }}
+     {{ Location.alaune }}
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+{% block title %}Index Location{% endblock %}
+{% include 'AdminMenu.html.twig' %}
+
+    <h1>Location index</h1>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Titre</th>
+                <th>adresse</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for locations in location %}
+        {# https://twig.symfony.com/doc/3.x/tags/for.html #}
+            <tr>
+                <td>{{ locations.id }}</td>
+                <td>{{ locations.date| date("d/m/Y")  }}</td>
+                <td>{{ locations.titre }}</td>
+                <td>{{ locations.adresse }}</td>
+                <td> <a href="{{ path('nouvellocation', {'id':locations.id}) }}"> Nouveaux avec form </a> </td>
+                <td> <a href="{{ path('affichagelocation', {'id':locations.id}) }}"> Afficher </a> </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
+
