@@ -4,6 +4,8 @@
 {% block body %}
 
 {% block title %}Index Utilisateurs{% endblock %}
+{% include 'AdminMenu.html.twig' %}
+
     <h1>Utilisateurs index</h1>
 <table class="table">
         <thead>
@@ -23,7 +25,13 @@
                 <td>{{ utilisateur.id }}</td>
                 <td>{{ utilisateur.nom }}</td>
                 <td>{{ utilisateur.prenom }}</td>
-                <td>{{ utilisateur.photo")  }}</td>
+                <td>{{ utilisateur.photo }}</td>
+
+                {# <td>{{ utilisateur.datedenaissance| date("d/m/Y")  }}</td> #}
+                
+                <td> <a href="{{ path('affichageUtilisateur', {'id':utilisateur.id}) }}"> Afficher </a> </td>
+                <td> <a href="{{ path('nouvelutilisateur', {'id':utilisateur.id}) }}"> Nouveau </a> </td>
+
 
             </tr>
         {% else %}

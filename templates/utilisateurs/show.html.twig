@@ -2,16 +2,19 @@
 
 
 {% block title %} 
-    Article Controller
+    Utilisateurs Controller
 {% endblock %}
 
 {% block body %}
         <h1> page show </h1>
-     {{ articles.id }}
-     {{ articles.Titre }}
-     {{ articles.Resume }}          
-     {{ articles.Date| date("d/m/Y")  }}
-     {{ articles.Contenu }}          
-
+     {{ utilisateurs.id }}
+     {{ utilisateurs.nom }}
+     {{ utilisateurs.prenom }}          
+     {{ utilisateurs.photo }}          
+     {{ utilisateurs.login }}
+     {{ utilisateurs.pass }}          
+     {{ utilisateurs.email }}          
+     {{ utilisateurs.adresse }}
+     {{ utilisateurs.role }}
 
 {% endblock %}

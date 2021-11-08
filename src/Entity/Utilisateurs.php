@@ -32,11 +32,7 @@ class Utilisateurs
      */
     private $photo;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $Datedenaissance;
-
+   
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -102,19 +98,7 @@ class Utilisateurs
         $this->photo = $photo;
 
         return $this;
-    }
-
-    public function getDatedenaissance(): ?\DateTimeInterface
-    {
-        return $this->datedenaissance;
-    }
-
-    public function setDatedenaissance(\DateTimeInterface $datedenaissance): self
-    {
-        $this->datedenaissance = $datedenaissance;
-
-        return $this;
-    }
+    }    
 
     public function getLogin(): ?string
     {

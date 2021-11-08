@@ -19,6 +19,49 @@ use Symfony\Component\HttpFoundation\Request;
 class UtilisateursController extends AbstractController
 {
     /**
+     * @Route("/new2utilisateur", name="nouvelutilisateur")
+    */
+        // Ici on Fait une Enregistrement avec une Formulaire
+        public function pageForm(Request $request, EntityManagerInterface $manager)
+    {
+        $utilisateurs =new Utilisateurs(); // Instanciation
+
+        // Creation de mon Formulaire
+        $form = $this->createFormBuilder($utilisateurs) 
+                    ->add('nom')
+                    ->add('prenom')
+                    ->add('login')
+                    ->add('pass')
+                    ->add('photo')
+                    ->add('adresse')
+                    ->add('email')
+                    ->add('role')
+                
+            // Demande le résultat
+            ->getForm();
+
+        // Analyse des Requetes & Traitement des information 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($utilisateurs); 
+            $manager->flush();
+
+            return $this->redirectToRoute('nouvelutilisateur', 
+
+            ['id'=>$utilisateurs->getId()]); // Redirection vers la page
+        }
+       
+        // Redirection du Formulaire vers le TWIG pour l’affichage avec
+        return $this->render('utilisateurs/new2.html.twig', [
+            'formUtilisateur' => $form->createView()
+        ]);
+    }
+
+
+
+
+    /**
      * @Route("/", name="indexUtilisateur2")
      */
     public function index(): Response
@@ -55,5 +98,20 @@ class UtilisateursController extends AbstractController
        ]);
 
     }
+    /**
+     * @Route("/{id}", name="affichageUtilisateur", methods={"GET"})
+     */
+    public function show(Utilisateurs $utilisateurs, UtilisateursRepository $utilisateursRepository, Request $request, EntityManagerInterface $manager ): Response
+    {
+        return $this->render('utilisateurs/show.html.twig', [
+            'id'=>$utilisateurs->getId(),
+            'utilisateurs' => $utilisateurs,
+        ]);
+    }
+
+
+   
+
+
 
 }
