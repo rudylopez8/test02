@@ -7,11 +7,12 @@
 
 {% block body %}
         <h1> page show </h1>
-     {{ articles.id }}
-     {{ articles.Titre }}
-     {{ articles.Resume }}          
-     {{ articles.Date| date("d/m/Y")  }}
-     {{ articles.Contenu }}          
+     {{ articles.id }} <br>
+     {{ articles.Titre }} <br>
+     {{ articles.Resume }} <br>      
+     {{ articles.Date| date("d/m/Y") <br>  }}
+     {{ articles.Contenu }} <br>         
 
+     <a href="{{ path('articleindex') }}"> Les articles </a>  
 
 {% endblock %}

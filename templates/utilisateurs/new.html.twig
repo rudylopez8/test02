@@ -11,7 +11,8 @@
      {{ utilisateurs.Nom }}
      {{ utilisateurs.Resume }}          
      {{ utilisateurs.Datedenaissance| date("d/m/Y")  }}
-     {{ articles.Photo }}          
+     {{ utilisateurs.Photo }}          
            
+     <a href="{{ path('indexUtilisateur2') }}"> Gestion des utilisateurs </a>  
 
 {% endblock %}

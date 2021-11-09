@@ -7,9 +7,10 @@
 
 {% block body %}
         <h1> page show </h1>
-     {{ categorie.id }}
-     {{ categorie.Titre }}
-     {{ categorie.resume }}          
+     {{ categorie.id }} <br>
+     {{ categorie.Titre }} <br>
+     {{ categorie.resume }} <br>         
 
+        <a href="{{ path('categorie') }}"> Gestion des Categorie  </a>  
 
 {% endblock %}

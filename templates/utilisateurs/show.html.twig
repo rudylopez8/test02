@@ -7,14 +7,16 @@
 
 {% block body %}
         <h1> page show </h1>
-     {{ utilisateurs.id }}
-     {{ utilisateurs.nom }}
-     {{ utilisateurs.prenom }}          
-     {{ utilisateurs.photo }}          
-     {{ utilisateurs.login }}
-     {{ utilisateurs.pass }}          
-     {{ utilisateurs.email }}          
-     {{ utilisateurs.adresse }}
-     {{ utilisateurs.role }}
+     {{ utilisateurs.id }} <br>
+     {{ utilisateurs.nom }} <br>
+     {{ utilisateurs.prenom }} <br>        
+     {{ utilisateurs.photo }} <br>        
+     {{ utilisateurs.login }} <br>
+     {{ utilisateurs.pass }} <br>         
+     {{ utilisateurs.email }} <br>      
+     {{ utilisateurs.adresse }} <br>
+     {{ utilisateurs.role }} <br>
+
+     <a href="{{ path('indexUtilisateur2') }}"> Gestion des utilisateurs </a>  
 
 {% endblock %}

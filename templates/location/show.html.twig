@@ -7,17 +7,18 @@
 
 {% block body %}
         <h1> page show </h1>
-     {{ Location.id }}
-     {{ Location.date| date("d/m/Y")  }}
-     {{ Location.titre }}
-     {{ Location.categorie }}          
-     {{ Location.image }}
-     {{ Location.description }}
-     {{ Location.valeur }}
-     {{ Location.adresse }}
-     {{ Location.accessibility }}
-     {{ Location.statuts }}
-     {{ Location.alaune }}
+     {{ Location.id }} <br>
+     {{ Location.date| date("d/m/Y")  }} <br>
+     {{ Location.titre }} <br>
+     {{ Location.categorie }} <br>         
+     {{ Location.image }} <br>
+     {{ Location.description }} <br>
+     {{ Location.valeur }} <br>
+     {{ Location.adresse }} <br>
+     {{ Location.accessibility }} <br>
+     {{ Location.statuts }} <br>
+     {{ Location.alaune }} <br>
 
+        <a href="{{ path('locationindex') }}"> Les locations </a>    
 
 {% endblock %}

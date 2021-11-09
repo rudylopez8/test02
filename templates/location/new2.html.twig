@@ -6,8 +6,8 @@
 
 {{ form_start(formLocation) }}
 date : {{ form_widget(formLocation.date) }}<br>
-Titre: {{ form_widget(formLocation.titre) }} <br>
-Categorie: {{ form_widget(formLocation.categorie) }} <br>
+Titre: {{ form_label(formLocation.titre) }} <br>
+Categorie: {{ form_row(formLocation.categorie) }} <br>
 Image: {{ form_widget(formLocation.image) }} <br>
 Description: {{ form_widget(formLocation.description) }} <br>
 Valeur: {{ form_widget(formLocation.valeur) }}<br>
@@ -20,6 +20,7 @@ A la Une : {{ form_widget(formLocation.alaune) }}<br>
 
       
     {{ form_end(formLocation) }}
+        <a href="{{ path('locationindex') }}"> Les locations </a>    
 
 
 {% endblock %}
